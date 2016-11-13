@@ -1,0 +1,21 @@
+{
+  "name": "techstats",
+  "version": "0.0.0",
+  "authors": [
+    "Grigoriy Mikhalkin"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "jquery-mobile-bower": "^1.4.5",
+    "font-awesome": "fontawesome#^4.6.3",
+    "Chart.js": "chart.js#2.1"
+  }
+}

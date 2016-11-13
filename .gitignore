@@ -1,5 +1,5 @@
+*.pyc
 *.*~
 \#*.*\#
-./frontend/app/*.js*
-./frontend/node_modules/
-./frontend/bower_components/
+/frontend/node_modules
+/frontend/bower_components

@@ -1,0 +1,52 @@
+<!-- <md-toolbar color="primary">
+  TechStats
+</md-toolbar> -->
+<md-sidenav-layout>
+  <md-sidenav #start mode="side" opened>
+    <md-tab-group>
+      <md-tab>
+        <template md-tab-label>Techs</template>
+        <template md-tab-content>
+          <div *ngFor="let tech of techs">
+            <p>
+              <input type="checkbox" (click)="selectTech(tech.name)">
+              {{ tech.name }}
+            </p>
+          </div>
+        </template>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Graph Settings</template>
+        <template md-tab-content></template>
+      </md-tab>
+    </md-tab-group>
+  </md-sidenav>
+  <md-grid-list cols="2" rowHeight="500px">
+    <md-grid-tile>
+      <timegraph></timegraph>
+    </md-grid-tile>
+    <md-grid-tile>
+      <timegraph></timegraph>
+    </md-grid-tile>
+    <md-grid-tile>
+      <timegraph></timegraph>
+    </md-grid-tile>
+    <md-grid-tile>
+      <timegraph></timegraph>
+    </md-grid-tile>
+  </md-grid-list>
+</md-sidenav-layout>
+
+<!-- <div class="tech-list">
+  <div *ngFor="let tech of techs">
+    <div class="col-md-1">
+      <input type="checkbox" (click)="selectTech(tech.name)">
+    </div>
+    <div class="col-md-7">
+	     {{tech.name}}
+    </div>
+    <div class="col-md-4">
+      <input type="button" value="Delete" class="btn btn-danger">
+    </div>
+  </div>
+</div> -->

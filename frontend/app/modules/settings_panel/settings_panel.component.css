@@ -1,0 +1,20 @@
+md-sidenav-layout {
+  height: 100vh;
+}
+
+md-sidenav {
+  width: 320px;
+}
+
+md-grid-list {
+  max-width: 1403 px;
+  margin: 0px;
+}
+
+md-grid-tile {
+  margin: 0%;
+}
+
+timegraph {
+  width: 90%;
+}
