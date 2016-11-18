@@ -1,17 +1,17 @@
-import mock
+# import mock
 
-from models.loaders import TechLoader
+from models.loaders import VacanciesLoader, ResumesLoader, StatsCalculator
 
 
-class TestTechLoader():
+class TestVacanciesLoader():
 
     def setup_method(self, method):
-        self.loader = TechLoader()
-        self.start_date = ''
-        self.end_date = ''
+        self.loader = VacanciesLoader()
+        self.date_from = None
+        self.date_to = None
 
     def test_load_vacancies(self):
         tech = {}
-        vacancies = self.loader.load_vacancies(tech)
+        vacancies = self.loader.load()
 
         assert vacancies

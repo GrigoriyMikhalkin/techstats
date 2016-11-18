@@ -2,43 +2,43 @@ import json
 import requests
 
 
-class TechLoader():
-    vacancies_api = 'https://api.hh.ru/vacancies'
-    resumes_api = ''
+class BaseLoader():
+    api = ''
+    query = {}
 
-    def load_vacancies(self, tech):
-        query = {
-            'text': '+'.join([tech['name']] + tech['related_techs']),
-            'search_field': 'description',
-            'start_date': '',
-            'end_date': ''
-        }
+    def get_techs():
+        pass
+
+    def load(self, date_from=None, date_to=None):
+        search_text = 'python'
+        # '+'.join([tech['name']] + tech['related_techs'])
+        search_query = self.query.copy()
+        search_query['text'] = search_text
+        search_query['date_from'] = date_from
+        search_query['date_to'] = date_to
 
         response = requests.get(
-            self.vacancies_api
+            self.api,
+            params=search_query
         )
 
-        vacancies = response
-        return vacancies
+        return response
 
-    def load_resumes(self, tech):
-        pass
 
-    def load_data(self, start_date, end_date):
-        """
-        Loads data from hh.ru
-        """
-        techs = []
-        self.start_date = start_date
-        self.end_date = end_date
+class VacanciesLoader(BaseLoader):
+    api = 'https://api.hh.ru/vacancies'
+    query = {
+        'text': '',
+        'search_field': 'description',
+        'date_from': '',
+        'date_to': ''
+    }
 
-        for tech in techs:
-            self.load_vacancies(tech)
-            self.load_resumes(tech)
-            # self.load_stats()
 
-    def load_stats(self, period):
-        """
-        Loads stats calculated from data provided by hh.ru
-        """
-        pass
+class ResumesLoader(BaseLoader):
+    api = 'https://api.hh.ru/resumes'
+    query = {}
+
+
+class StatsCalculator():
+    pass
